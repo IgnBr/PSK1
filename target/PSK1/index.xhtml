@@ -20,7 +20,7 @@
         <p>Address: </p>
         <h:inputText value="#{universities.universityToCreate.address}" required="true"/>
         <br/>
-        <h:commandButton value="Add new university" action="#{universities.createUniversity}"/>
+        <h:commandButton value="Add new university" actionListener="#{universities.createUniversity}" action="index?faces-redirect=true"/>
     </h:form>
     <br/>
     <h:link value="Mybatis" outcome="/myBatis/universities"/>
