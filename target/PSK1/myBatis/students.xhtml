@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Students mybatis</title>
+</h:head>
+<h:body>
+    <h2>University name: #{universityStudentsMyBatis.university.name}</h2>
+    <h2>University address: #{universityStudentsMyBatis.university.address}</h2>
+    <h2>Students: </h2>
+    <ol>
+        <ui:repeat value="#{universityStudentsMyBatis.universityStudents}" var="student">
+            <li>#{student.fullName}</li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText value="#{universityStudentsMyBatis.studentToCreate.fullName}" required="true"/>
+        <h:commandButton value="Create new student" action="#{universityStudentsMyBatis.createStudent}">
+            <f:param name="universityId" value="#{universityStudentsMyBatis.university.id}"/>
+        </h:commandButton>
+    </h:form>
+    <br/>
+    <h:link value="Main page" outcome="/index"/>
+</h:body>
+</html>
