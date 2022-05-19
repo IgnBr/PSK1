@@ -9,4 +9,14 @@
     <interceptors>
         <class>com.example.interceptors.MethodLogger</class>
     </interceptors>
+
+    <alternatives>
+        <class>com.example.services.NameGenerator</class>
+    </alternatives>
+
+    <decorators>
+        <class>
+            com.example.services.GeneratorDecorator
+        </class>
+    </decorators>
 </beans>

@@ -28,6 +28,14 @@ public class University implements Serializable {
     @OneToMany(mappedBy = "university", fetch = FetchType.EAGER)
     private List<Student> students;
 
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
+    public String getNameWithAddress() {
+        return "Name:" + this.getName() + " Address:" + this.getAddress();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

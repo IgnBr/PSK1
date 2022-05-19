@@ -10,7 +10,7 @@
     <ol>
         <ui:repeat value="#{universities.allUniversities}" var="university">
             <li>
-                <h:link value="#{university.name}" outcome="students?universityId=#{university.id}"/>
+                <h:link value="#{university.name}" outcome="universityDetails?universityId=#{university.id}"/>
             </li>
         </ui:repeat>
     </ol>

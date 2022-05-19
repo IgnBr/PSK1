@@ -24,4 +24,8 @@ public class UniversitiesDAO {
     public University findOne(int id) {
         return em.find(University.class, id);
     }
+
+    public University update(University university){
+        return em.merge(university);
+    }
 }
